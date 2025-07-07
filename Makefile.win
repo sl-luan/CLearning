@@ -1,0 +1,32 @@
+# Project: 项目6
+# Makefile created by Dev-C++ 6.5
+
+CPP      = g++.exe -D__DEBUG__
+CC       = gcc.exe -D__DEBUG__
+WINDRES  = windres.exe
+OBJ      = ../../../Desktop/未命名7.o 未命名8.o
+LINKOBJ  = ../../../Desktop/未命名7.o 未命名8.o
+LIBS     = -L"D:/C/Dev-Cpp/MinGW32/lib" -L"D:/C/Dev-Cpp/MinGW32/i686-w64-mingw32/lib" -static-libstdc++ -static-libgcc -g3
+INCS     = -I"D:/C/Dev-Cpp/MinGW32/include" -I"D:/C/Dev-Cpp/MinGW32/i686-w64-mingw32/include" -I"D:/C/Dev-Cpp/MinGW32/lib/gcc/i686-w64-mingw32/10.2.0/include" -I"D:/C/Dev-Cpp/MinGW32/lib/gcc/i686-w64-mingw32/10.2.0/include-fixed"
+CXXINCS  = -I"D:/C/Dev-Cpp/MinGW32/include" -I"D:/C/Dev-Cpp/MinGW32/i686-w64-mingw32/include" -I"D:/C/Dev-Cpp/MinGW32/lib/gcc/i686-w64-mingw32/10.2.0/include" -I"D:/C/Dev-Cpp/MinGW32/lib/gcc/i686-w64-mingw32/10.2.0/include-fixed" -I"D:/C/Dev-Cpp/MinGW32/include/c++/10.2.0" -I"D:/C/Dev-Cpp/MinGW32/include/c++/10.2.0/i686-w64-mingw32" -I"D:/C/Dev-Cpp/MinGW32/include/c++/10.2.0/backward"
+BIN      = 项目6.exe
+CXXFLAGS = $(CXXINCS) -Wall -Wextra -g3
+ENCODINGS = -finput-charset=utf-8 -fexec-charset=gbk
+CFLAGS   = $(INCS) -Wall -Wextra -g3
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+../../../Desktop/未命名7.o: ..\..\..\Desktop\未命名7.c
+	$(CC) -c ../../../Desktop/未命名7.c -o ../../../Desktop/未命名7.o $(CFLAGS) 
+
+未命名8.o: 未命名8.c
+	$(CC) -c 未命名8.c -o 未命名8.o $(CFLAGS) 
